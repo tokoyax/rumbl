@@ -4,7 +4,7 @@ defmodule Rumbl.VideoController do
   alias Rumbl.Video
 
   def action(conn, _) do
-    apply(__MODULE__, action_name(conn)),
+    apply(__MODULE__, action_name(conn),
       [conn, conn.params, conn.assigns.current_user])
   end
 
